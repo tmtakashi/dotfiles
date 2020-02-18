@@ -1,7 +1,7 @@
 """"""""
 "vim-plug"
 """"""""
-call plug#begin('~/.vim/plugged')
+call plug#begin(stdpath('data') . '/plugged')
 Plug 'VundleVim/Vundle.vim'
 " GitHub
 Plug 'tpope/vim-fugitive'
@@ -9,11 +9,8 @@ Plug 'Raimondi/delimitMate'
 Plug 'tpope/vim-surround'
 Plug 'airblade/vim-gitgutter'
 Plug 'preservim/nerdtree'
-nnoremap <silent><C-e> :NERDTreeToggle<CR>
-
-Plug 'tpope/vim-commentary'
+Plug 'preservim/nerdcommenter'
 Plug 'vim-airline/vim-airline'
-
 Plug 'pangloss/vim-javascript'
 Plug 'maxmellon/vim-jsx-pretty'
 
@@ -91,6 +88,9 @@ set wrapscan
 set hlsearch
 " ESC連打でハイライト解除
 map <Esc><Esc> :nohlsearch<CR><Esc>
+
+" Toggle nerdtree
+nnoremap <silent><C-e> :NERDTreeToggle<CR>
 
 let g:quickrun_config = {
 \   "cpp/g++" : {
