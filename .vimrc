@@ -25,6 +25,8 @@ Plugin 'vim-airline/vim-airline'
 call vundle#end()
 
 " setting
+set langmenu=en_US
+let $LANG = 'en_US'
 "文字コードをUFT-8に設定
 set fenc=utf-8
 " バックアップファイルを作らない
@@ -37,7 +39,6 @@ set autoread
 set hidden
 " 入力中のコマンドをステータスに表示する
 set showcmd
-
 
 " 見た目系
 " 行末の1文字先までカーソルを移動できるように
