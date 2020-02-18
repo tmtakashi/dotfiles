@@ -9,11 +9,20 @@ set rtp+=~/dotfiles/.vim/vundle.git
 call vundle#begin()
 " alternativel:, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
-
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 " GitHub
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-surround'
+Plugin 'cohama/lexima.vim'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'preservim/nerdtree'
+nnoremap <silent><C-e> :NERDTreeToggle<CR>
+
+Plugin 'tpope/vim-commentary'
+Plugin 'vim-airline/vim-airline'
+
+call vundle#end()
 
 " setting
 "文字コードをUFT-8に設定
