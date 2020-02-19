@@ -5,8 +5,8 @@ call plug#begin(stdpath('data') . '/plugged')
 Plug 'VundleVim/Vundle.vim'
 " GitHub
 Plug 'tpope/vim-fugitive'
-Plug 'Raimondi/delimitMate' 
 Plug 'tpope/vim-surround'
+Plug 'Raimondi/delimitMate' 
 Plug 'airblade/vim-gitgutter'
 Plug 'preservim/nerdtree'
 Plug 'preservim/nerdcommenter'
@@ -24,6 +24,9 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'thinca/vim-quickrun'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+Plug 'junegunn/fzf', { 'do': './install --bin' }
+Plug 'junegunn/fzf.vim'
 
 call plug#end()
 
@@ -43,12 +46,17 @@ set autoread
 set hidden
 " 入力中のコマンドをステータスに表示する
 set showcmd
+set path+=**
 
 " 見た目系
 " 行末の1文字先までカーソルを移動できるように
 set virtualedit=onemore
 " インデントはスマートインデント
 set smartindent
+set cindent
+"inoremap {<Enter> {}<Left><CR><ESC><S-o>
+"inoremap [<Enter> []<Left><CR><ESC><S-o>
+"inoremap (<Enter> ()<Left><CR><ESC><S-o>
 " ビープ音を可視化
 set visualbell
 " 括弧入力時の対応する括弧を表示
@@ -86,8 +94,6 @@ set incsearch
 set wrapscan
 " 検索語をハイライト表示
 set hlsearch
-" ESC連打でハイライト解除
-map <Esc><Esc> :nohlsearch<CR><Esc>
 
 " Toggle nerdtree
 nnoremap <silent><C-e> :NERDTreeToggle<CR>

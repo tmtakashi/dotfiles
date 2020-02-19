@@ -1,1 +1,3 @@
 nvim/coc/extensions/node_modules/
+coc
+configstore
