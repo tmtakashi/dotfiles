@@ -1,3 +1,9 @@
 nvim/coc/extensions/node_modules/
+nvim/.netrwhist
+nvim/data/
+nvim/nvim/
+nvim/plugged/
+nvim/shada/
+share/
 coc
 configstore
