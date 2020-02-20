@@ -31,6 +31,8 @@ Plug 'junegunn/fzf.vim'
 call plug#end()
 
 
+nmap <C-p> :Files<CR>
+
 " setting
 set langmenu=en_US
 let $LANG = 'en_US'
@@ -97,6 +99,7 @@ set hlsearch
 
 " Toggle nerdtree
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
+let NERDTreeShowHidden=1
 
 let g:quickrun_config = {
 \   "cpp/g++" : {
