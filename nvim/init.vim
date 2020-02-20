@@ -49,7 +49,7 @@ set hidden
 " 入力中のコマンドをステータスに表示する
 set showcmd
 set path+=**
-
+set modifiable
 " 見た目系
 " 行末の1文字先までカーソルを移動できるように
 set virtualedit=onemore
