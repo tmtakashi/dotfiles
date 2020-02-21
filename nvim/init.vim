@@ -13,6 +13,7 @@ Plug 'preservim/nerdcommenter'
 Plug 'vim-airline/vim-airline'
 Plug 'pangloss/vim-javascript'
 Plug 'maxmellon/vim-jsx-pretty'
+Plug 'janko/vim-test'
 
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
@@ -71,7 +72,10 @@ set wildmode=list:longest
 nnoremap j gj
 nnoremap k gk
 " シンタックスハイライトの有効化
-syntax enable
+syntax enable 
+" switch buffer
+nnoremap <silent> <C-j> :bprev<CR>
+nnoremap <silent> <C-k> :bnext<CR>
 
 
 " Tab系
@@ -108,6 +112,13 @@ let g:quickrun_config = {
 \       "outputter/buffer/split": "botright 8sp"
 \   },
 \}
+
+" vim-test
+nmap <silent> t<C-n> :TestNearest<CR>
+nmap <silent> t<C-f> :TestFile<CR>
+nmap <silent> t<C-s> :TestSuite<CR>
+nmap <silent> t<C-l> :TestLast<CR>
+nmap <silent> t<C-g> :TestVisit<CR>
 
 """"""""""""
 " coc config
