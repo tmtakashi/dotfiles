@@ -3,6 +3,12 @@
     "clangd": {
       "command": "clangd",
       "filetypes": ["c", "cpp", "objc", "objcpp"]
+    },
+   "golang": {
+    "command": "gopls",
+    "rootPatterns": ["go.mod"],
+    "disableWorkspaceFolders": true,
+    "filetypes": ["go"]
     }
   }
 }

@@ -20,8 +20,6 @@ Plug 'prettier/vim-prettier', {
   \ 'branch': 'release/0.x'
   \ }
 
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-
 Plug 'thinca/vim-quickrun'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -29,9 +27,14 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/fzf', { 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 
+Plug 'kana/vim-submode'
+
+" for latex
+Plug 'lervag/vimtex'
+
 call plug#end()
 
-
+" fzfをCtrl+pで開く
 nmap <C-p> :Files<CR>
 
 " setting
@@ -77,10 +80,13 @@ syntax enable
 nnoremap <silent> <C-j> :bprev<CR>
 nnoremap <silent> <C-k> :bnext<CR>
 
+" ESCを早くする
+set timeout timeoutlen=1000 ttimeoutlen=50
+
 
 " Tab系
 " 不可視文字を可視化(タブが「▸-」と表示される)
-set list listchars=tab:\▸\-
+" set list listchars=tab:\▸\-
 " Tab文字を半角スペースにする
 set expandtab
 " 行頭以外のTab文字の表示幅（スペースいくつ分）
@@ -101,6 +107,41 @@ set wrapscan
 " 検索語をハイライト表示
 set hlsearch
 
+" 画面分割系
+nnoremap s <Nop>
+nnoremap sj <C-w>j
+nnoremap sk <C-w>k
+nnoremap sl <C-w>l
+nnoremap sh <C-w>h
+nnoremap sJ <C-w>J
+nnoremap sK <C-w>K
+nnoremap sL <C-w>L
+nnoremap sH <C-w>H
+nnoremap sn gt
+nnoremap sp gT
+nnoremap sr <C-w>r
+nnoremap s= <C-w>=
+nnoremap sw <C-w>w
+nnoremap so <C-w>_<C-w>|
+nnoremap sO <C-w>=
+nnoremap sN :<C-u>bn<CR>
+nnoremap sP :<C-u>bp<CR>
+nnoremap st :<C-u>tabnew<CR>
+nnoremap sT :<C-u>Unite tab<CR>
+nnoremap ss :<C-u>sp<CR>
+nnoremap sv :<C-u>vs<CR>
+nnoremap sq :<C-u>q<CR>
+nnoremap sQ :<C-u>bd<CR>
+
+call submode#enter_with('bufmove', 'n', '', 's<', '<C-w>>')
+call submode#enter_with('bufmove', 'n', '', 's>', '<C-w><')
+call submode#enter_with('bufmove', 'n', '', 's+', '<C-w>+')
+call submode#enter_with('bufmove', 'n', '', 's-', '<C-w>-')
+call submode#map('bufmove', 'n', '', '<', '<C-w>>')
+call submode#map('bufmove', 'n', '', '>', '<C-w><')
+call submode#map('bufmove', 'n', '', '+', '<C-w>+')
+call submode#map('bufmove', 'n', '', '-', '<C-w>-')
+
 " Toggle nerdtree
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
@@ -111,6 +152,9 @@ let g:quickrun_config = {
 \       "hook/time/enable" : 1,
 \       "outputter/buffer/split": "botright 8sp"
 \   },
+\   "cpp/clang++": {
+\       "outputter/buffer/split": "botright 8sp"
+\   }
 \}
 
 " vim-test
