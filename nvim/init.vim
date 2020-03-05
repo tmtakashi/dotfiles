@@ -29,6 +29,8 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/fzf', { 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 
+Plug 'vheavenshell/vim-jsdoc'
+
 call plug#end()
 
 
@@ -68,6 +70,10 @@ set showmatch
 set laststatus=2
 " コマンドラインの補完
 set wildmode=list:longest
+" 補完の透明度
+set termguicolors
+set pumblend=1
+set winblend=10
 " 折り返し時に表示行単位での移動できるようにする
 nnoremap j gj
 nnoremap k gk
