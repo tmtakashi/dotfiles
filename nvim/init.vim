@@ -15,6 +15,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'janko/vim-test'
 Plug 'mattn/emmet-vim'
+Plug 'ryanoasis/vim-devicons'
 
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
@@ -43,6 +44,7 @@ set langmenu=en_US
 let $LANG = 'en_US'
 "文字コードをUFT-8に設定
 set fenc=utf-8
+set encoding=UTF-8
 " バックアップファイルを作らない
 set nobackup
 " スワップファイルを作らない

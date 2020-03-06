@@ -14,3 +14,5 @@ export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOBIN
 export PATH="/usr/local/opt/llvm/bin:$PATH"
+
+alias vim=nvim
