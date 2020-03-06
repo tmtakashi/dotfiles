@@ -168,7 +168,8 @@ nmap <silent> t<C-l> :TestLast<CR>
 nmap <silent> t<C-g> :TestVisit<CR>
 
 " emmet-vim
-" let g:user_emmet_settings = {
+let g:user_emmet_leader_key=','
+let g:user_emmet_settings = {
 \  'javascript' : {
 \      'extends' : 'jsx',
 \  },
