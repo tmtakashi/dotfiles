@@ -80,6 +80,8 @@ syntax enable
 nnoremap <silent> <C-j> :bprev<CR>
 nnoremap <silent> <C-k> :bnext<CR>
 
+set relativenumber
+
 " ESCを早くする
 set timeout timeoutlen=1000 ttimeoutlen=50
 
