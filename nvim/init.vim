@@ -14,6 +14,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'pangloss/vim-javascript'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'janko/vim-test'
+Plug 'mattn/emmet-vim'
 
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
@@ -165,6 +166,13 @@ nmap <silent> t<C-f> :TestFile<CR>
 nmap <silent> t<C-s> :TestSuite<CR>
 nmap <silent> t<C-l> :TestLast<CR>
 nmap <silent> t<C-g> :TestVisit<CR>
+
+" emmet-vim
+" let g:user_emmet_settings = {
+\  'javascript' : {
+\      'extends' : 'jsx',
+\  },
+\}
 
 """"""""""""
 " coc config
