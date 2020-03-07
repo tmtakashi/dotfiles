@@ -16,3 +16,5 @@ export PATH=$PATH:$GOBIN
 export PATH="/usr/local/opt/llvm/bin:$PATH"
 
 alias vim=nvim
+alias vrc='vim ~/dotfiles/.vimrc'
+alias zrc='vim ~/dotfiles/.zshrc'
