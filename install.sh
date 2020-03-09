@@ -3,6 +3,7 @@
 # install nvim
 brew install nvim
 brew install tmux
+brew install starship
 brew install jesseduffield/lazygit/lazygit
 
 chsh -s /bin/zsh

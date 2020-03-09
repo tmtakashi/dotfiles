@@ -16,6 +16,8 @@ Plug 'maxmellon/vim-jsx-pretty'
 Plug 'janko/vim-test'
 Plug 'mattn/emmet-vim'
 Plug 'ryanoasis/vim-devicons'
+Plug 'luochen1990/rainbow'
+let g:rainbow_active = 1
 
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
@@ -29,15 +31,16 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/fzf', { 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 
-Plug 'kana/vim-submode'
-
 " for latex
 Plug 'lervag/vimtex'
+
+Plug 'Yggdroot/indentLine'
+let g:indentLine_setColors = 0
 
 call plug#end()
 
 " fzfをCtrl+pで開く
-nmap <C-p> :Files<CR>
+noremap <C-p> :Files<CR>
 
 " setting
 set langmenu=en_US
@@ -63,13 +66,13 @@ set virtualedit=onemore
 " インデントはスマートインデント
 set smartindent
 set cindent
-"inoremap {<Enter> {}<Left><CR><ESC><S-o>
-"inoremap [<Enter> []<Left><CR><ESC><S-o>
-"inoremap (<Enter> ()<Left><CR><ESC><S-o>
+inoremap {<Enter> {}<Left><CR><ESC><S-o>
+inoremap [<Enter> []<Left><CR><ESC><S-o>
+inoremap (<Enter> ()<Left><CR><ESC><S-o>
+" 対応するカッコを表示しない
+let loaded_matchparen = 1
 " ビープ音を可視化
 set visualbell
-" 括弧入力時の対応する括弧を表示
-set showmatch
 " ステータスラインを常に表示
 set laststatus=2
 " コマンドラインの補完
@@ -86,10 +89,6 @@ nnoremap <silent> <C-k> :bnext<CR>
 
 set relativenumber
 let mapleader = ","
-
-" switch : and ;
-nnoremap ; :
-nnoremap : ;
 
 " ESCを早くする
 set timeout timeoutlen=1000 ttimeoutlen=50
@@ -117,41 +116,6 @@ set incsearch
 set wrapscan
 " 検索語をハイライト表示
 set hlsearch
-
-" 画面分割系
-nnoremap s <Nop>
-nnoremap sj <C-w>j
-nnoremap sk <C-w>k
-nnoremap sl <C-w>l
-nnoremap sh <C-w>h
-nnoremap sJ <C-w>J
-nnoremap sK <C-w>K
-nnoremap sL <C-w>L
-nnoremap sH <C-w>H
-nnoremap sn gt
-nnoremap sp gT
-nnoremap sr <C-w>r
-nnoremap s= <C-w>=
-nnoremap sw <C-w>w
-nnoremap so <C-w>_<C-w>|
-nnoremap sO <C-w>=
-nnoremap sN :<C-u>bn<CR>
-nnoremap sP :<C-u>bp<CR>
-nnoremap st :<C-u>tabnew<CR>
-nnoremap sT :<C-u>Unite tab<CR>
-nnoremap ss :<C-u>sp<CR>
-nnoremap sv :<C-u>vs<CR>
-nnoremap sq :<C-u>q<CR>
-nnoremap sQ :<C-u>bd<CR>
-
-call submode#enter_with('bufmove', 'n', '', 's<', '<C-w>>')
-call submode#enter_with('bufmove', 'n', '', 's>', '<C-w><')
-call submode#enter_with('bufmove', 'n', '', 's+', '<C-w>+')
-call submode#enter_with('bufmove', 'n', '', 's-', '<C-w>-')
-call submode#map('bufmove', 'n', '', '<', '<C-w>>')
-call submode#map('bufmove', 'n', '', '>', '<C-w><')
-call submode#map('bufmove', 'n', '', '+', '<C-w>+')
-call submode#map('bufmove', 'n', '', '-', '<C-w>-')
 
 " Toggle nerdtree
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
