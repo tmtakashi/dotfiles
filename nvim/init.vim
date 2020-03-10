@@ -35,7 +35,6 @@ Plug 'junegunn/fzf.vim'
 Plug 'lervag/vimtex'
 
 Plug 'Yggdroot/indentLine'
-let g:indentLine_setColors = 0
 
 call plug#end()
 
@@ -89,6 +88,10 @@ nnoremap <silent> <C-k> :bnext<CR>
 
 set relativenumber
 let mapleader = ","
+
+" Popup
+hi Pmenu ctermfg=NONE ctermbg=236 cterm=NONE guifg=NONE guibg=#64666d gui=NONE
+hi PmenuSel ctermfg=NONE ctermbg=24 cterm=NONE guifg=NONE guibg=#204a87 gui=NONE
 
 " ESCを早くする
 set timeout timeoutlen=1000 ttimeoutlen=50
