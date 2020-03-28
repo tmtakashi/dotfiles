@@ -1,4 +1,4 @@
-""""""""
+"""""""""
 "vim-plug"
 """"""""
 call plug#begin(stdpath('data') . '/plugged')
@@ -32,7 +32,7 @@ Plug 'junegunn/fzf.vim'
 
 " for latex
 Plug 'lervag/vimtex'
-Plug 'Yggdroot/indentLine'
+let g:tex_conceal=''
 
 call plug#end()
 
@@ -118,6 +118,9 @@ set hlsearch
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
 
+"terminal
+tnoremap <silent> <ESC> <C-\><C-n>
+
 let g:quickrun_config = {
 \   "cpp/g++" : {
 \       "cmdopt" : "-std=c++0x",
@@ -136,34 +139,8 @@ nmap <silent> t<C-s> :TestSuite<CR>
 nmap <silent> t<C-l> :TestLast<CR>
 nmap <silent> t<C-g> :TestVisit<CR>
 
-" Tab settings
-
-" Anywhere SID.
-function! s:SID_PREFIX()
-  return matchstr(expand('<sfile>'), '<SNR>\d\+_\zeSID_PREFIX$')
-endfunction
-
-" Set tabline.
-function! s:my_tabline()  "{{{
-  let s = ''
-  for i in range(1, tabpagenr('$'))
-    let bufnrs = tabpagebuflist(i)
-    let bufnr = bufnrs[tabpagewinnr(i) - 1]  " first window, first appears
-    let no = i  " display 0-origin tabpagenr.
-    let mod = getbufvar(bufnr, '&modified') ? '!' : ' '
-    let title = fnamemodify(bufname(bufnr), ':t')
-    let title = '[' . title . ']'
-    let s .= '%'.i.'T'
-    let s .= '%#' . (i == tabpagenr() ? 'TabLineSel' : 'TabLine') . '#'
-    let s .= no . ':' . title
-    let s .= mod
-    let s .= '%#TabLineFill# '
-  endfor
-  let s .= '%#TabLineFill#%T%=%#TabLine#'
-  return s
-endfunction "}}}
-let &tabline = '%!'. s:SID_PREFIX() . 'my_tabline()'
-set showtabline=2 " 常にタブラインを表示
+" set tabline
+let g:airline#extensions#tabline#enabled = 1
 
 " The prefix key.
 nnoremap    [Tag]   <Nop>
