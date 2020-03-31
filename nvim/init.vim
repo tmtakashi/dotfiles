@@ -1,4 +1,4 @@
-""""""""
+"""""""""
 "vim-plug"
 """"""""
 call plug#begin(stdpath('data') . '/plugged')
@@ -32,7 +32,7 @@ Plug 'junegunn/fzf.vim'
 
 " for latex
 Plug 'lervag/vimtex'
-Plug 'Yggdroot/indentLine'
+let g:tex_conceal=''
 
 call plug#end()
 
@@ -122,6 +122,9 @@ set hlsearch
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
 
+"terminal
+tnoremap <silent> <ESC> <C-\><C-n>
+
 let g:quickrun_config = {
 \   "cpp/g++" : {
 \       "cmdopt" : "-std=c++0x",
@@ -140,6 +143,26 @@ nmap <silent> t<C-s> :TestSuite<CR>
 nmap <silent> t<C-l> :TestLast<CR>
 nmap <silent> t<C-g> :TestVisit<CR>
 
+" set tabline
+let g:airline#extensions#tabline#enabled = 1
+
+" The prefix key.
+nnoremap    [Tag]   <Nop>
+nmap    t [Tag]
+" Tab jump
+for n in range(1, 9)
+  execute 'nnoremap <silent> [Tag]'.n  ':<C-u>tabnext'.n.'<CR>'
+endfor
+" t1 で1番左のタブ、t2 で1番左から2番目のタブにジャンプ
+
+map <silent> [Tag]c :tablast <bar> tabnew<CR>
+" tc 新しいタブを一番右に作る
+map <silent> [Tag]x :tabclose<CR>
+" tx タブを閉じる
+map <silent> [Tag]n :tabnext<CR>
+" tn 次のタブ
+map <silent> [Tag]p :tabprevious<CR>
+" tp 前のタブ
 
 """"""""""""
 " coc config

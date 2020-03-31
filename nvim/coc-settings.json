@@ -10,5 +10,6 @@
     "disableWorkspaceFolders": true,
     "filetypes": ["go"]
     }
-  }
+  },
+  "coc.preferences.formatOnSaveFiletypes": ["JavaScript"]
 }
