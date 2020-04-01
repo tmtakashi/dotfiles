@@ -16,6 +16,8 @@ Plug 'janko/vim-test'
 Plug 'ryanoasis/vim-devicons'
 Plug 'luochen1990/rainbow'
 Plug 'mattn/emmet-vim'
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
 let g:rainbow_active = 1
 
 Plug 'prettier/vim-prettier', {
@@ -131,6 +133,12 @@ let g:quickrun_config = {
 \   "cpp/clang++": {
 \       "outputter/buffer/split": "botright 8sp"
 \   }
+\}
+
+let g:user_emmet_settings = {
+\  'javascript' : {
+\      'extends' : ['jsx', 'tsx'],
+\  },
 \}
 
 " vim-test
