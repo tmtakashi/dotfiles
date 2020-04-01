@@ -81,6 +81,7 @@ colorscheme elflord
 nnoremap <silent> <C-j> :bprev<CR>
 nnoremap <silent> <C-k> :bnext<CR>
 
+set clipboard=unnamed
 set relativenumber
 
 " Popup
