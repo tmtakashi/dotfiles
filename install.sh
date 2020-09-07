@@ -1,17 +1,16 @@
 #!/bin/bash
 
-# install nvim
-brew install nvim
+# intall tools
 brew install tmux
 brew install starship
 brew install jesseduffield/lazygit/lazygit
 
-chsh -s /bin/zsh
-ln -s $HOME/dotfiles/.zshrc $HOME/.zshrc
+sudo chsh -s /bin/zsh
+ln -sf $HOME/dotfiles/.zshrc $HOME/.zshrc
+ln -sf $HOME/dotfiles/.vimrc $HOME/.vimrc
 
-# settings for nvim
-sudo ln -s $XDG_CONFIG_HOME/nvim/coc $XDG_CONFIG_HOME/coc
 
 # setting for tmux
-sudo ln -s $HOME/dotfiles/.tmux.conf $HOME/.tmux.conf
+sudo ln -sf $HOME/dotfiles/.tmux.conf $HOME/.tmux.conf
 
+source $HOME/.zshrc
