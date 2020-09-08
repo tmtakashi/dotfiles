@@ -1,12 +1,12 @@
 {
   "dependencies": {
     "coc-dictionary": ">=1.2.2",
-    "coc-eslint": ">=1.2.6",
-    "coc-json": ">=1.2.5",
+    "coc-eslint": ">=1.2.7",
+    "coc-json": ">=1.2.6",
     "coc-pairs": ">=1.2.20",
-    "coc-prettier": ">=1.1.11",
-    "coc-python": ">=1.2.9",
-    "coc-snippets": ">=2.1.19",
+    "coc-prettier": ">=1.1.17",
+    "coc-python": ">=1.2.12",
+    "coc-snippets": ">=2.1.28",
     "coc-tsserver": ">=1.4.9"
   }
 }

@@ -117,10 +117,20 @@ set incsearch
 set wrapscan
 " 検索語をハイライト表示
 set hlsearch
+set autoread
 
 " Toggle nerdtree
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
+set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Nerd\ Font\ Complete\ 12
+
+" フォルダアイコンを表示
+let g:WebDevIconsNerdTreeBeforeGlyphPadding = ""
+let g:WebDevIconsUnicodeDecorateFolderNodes = v:true
+" after a re-source, fix syntax matching issues (concealing brackets):
+if exists('g:loaded_webdevicons')
+  call webdevicons#refresh()
+endif
 
 "terminal
 tnoremap <silent> <ESC> <C-\><C-n>
@@ -145,6 +155,7 @@ nmap <silent> t<C-g> :TestVisit<CR>
 
 " set tabline
 let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
 
 " The prefix key.
 nnoremap    [Tag]   <Nop>
