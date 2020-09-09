@@ -1,10 +1,11 @@
-filetype plugin indent on               " Enable filetype based indentation
+set encoding=UTF-8
 set autoindent                          " Respect indentation when starting a new line.
 set expandtab                           " Expand tabs to spaces. Essential in Python.
 set tabstop=4                           " Number of spaces tab is counted for.
 set shiftwidth=4                        " Number of spaces to use for autoindent.
 set backspace=2                         " Fix backspace behavior on most terminals.
 set noswapfile                          " Disable swap files
+filetype plugin indent on               " Enable filetype based indentation
 
 let mapleader=","                       " Remap <leader> to  ','
 set formatoptions-=cro                  " Disable automatic commenting
@@ -18,7 +19,7 @@ map gp :bp<cr>
 """"""""""""""""""""""""
 call plug#begin()
 
-Plug 'cocopon/iceberg.vim'
+Plug 'dracula/vim', { 'name': 'dracula'  }
 Plug 'airblade/vim-gitgutter'
 Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -42,6 +43,7 @@ Plug 'puremourning/vimspector'
 Plug 'skywind3000/asynctasks.vim'
 Plug 'skywind3000/asyncrun.vim'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'ryanoasis/vim-devicons'
 
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 Plug 'rust-lang/rust.vim'
@@ -58,15 +60,26 @@ silent helptags ALL
 """""""""""""""""""""""""
 " Color scheme          "
 """""""""""""""""""""""""
-syntax on                               " Enable syntax highlighting
-highlight Pmenu ctermbg=gray guibg=gray " Change popup menu color
-colorscheme iceberg
+set termguicolors
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+packadd! dracula
+syntax enable
+colorscheme dracula
+let g:dracula_italic = 0
 
 """""""""""""""""""""""""
 " Plugin nerdtree       "
 """""""""""""""""""""""""
-let NERDTreeShowHidden=1
+"let NERDTreeShowHidden=1
+nmap <C-e> :NERDTreeToggle<CR>
 
+"""""""""""""""""""""""""
+" Plugin vim-devicons   "
+"""""""""""""""""""""""""
+if exists("g:loaded_webdevicons")
+  call webdevicons#refresh()
+endif
 """""""""""""""""""""""""
 " Plugin fzf            "
 """""""""""""""""""""""""
