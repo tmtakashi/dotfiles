@@ -28,6 +28,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'qpkorr/vim-bufkill'
 Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-fugitive'
+Plug 'rhysd/git-messenger.vim'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-eunuch'
@@ -60,13 +61,17 @@ silent helptags ALL
 """""""""""""""""""""""""
 " Color scheme          "
 """""""""""""""""""""""""
+let g:dracula_italic = 0
 set termguicolors
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 packadd! dracula
 syntax enable
 colorscheme dracula
-let g:dracula_italic = 0
+highlight Normal ctermbg=None
+if (has("termguicolors"))
+    set termguicolors
+endif
 
 """""""""""""""""""""""""
 " Plugin nerdtree       "
@@ -140,4 +145,18 @@ augroup END
 " Plugin coc.nvim       "
 """""""""""""""""""""""""
 nmap <silent> gd <Plug>(coc-definition)
+" Add `:Format` command to format current buffer.
+ command! -nargs=0 Format :call CocAction('format')
+
+" Triger `autoread` when files changes on disk
+" "
+" https://unix.stackexchange.com/questions/149209/refresh-changed-content-of-file-opened-in-vim/383044#383044
+" "
+" https://vi.stackexchange.com/questions/13692/prevent-focusgained-autocmd-running-in-command-line-editing-mode
+autocmd FocusGained,BufEnter,CursorHold,CursorHoldI *
+    \ if mode() !~ '\v(c|r.?|!|t)' && getcmdwintype() == '' | checktime | endif
+" Notification after file change
+" https://vi.stackexchange.com/questions/13091/autocmd-event-for-autoread
+autocmd FileChangedShellPost *
+\ echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
 
