@@ -32,6 +32,7 @@ Plug 'rhysd/git-messenger.vim'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-eunuch'
+Plug 'luochen1990/rainbow'
 Plug 'Yggdroot/indentLine'
 Plug 'google/vim-maktaba'
 Plug 'google/vim-codefmt'
@@ -123,7 +124,6 @@ let g:vimspector_enable_mappings = 'HUMAN'
 """""""""""""""""""""""""
 let g:asyncrun_open = 6
 let g:asyncrun_rootmarks = ['.git', '.svn', '.root', '.project', '.hg']
-
 """""""""""""""""""""""""
 " Plugin vim-codefmt    "
 """""""""""""""""""""""""
@@ -147,6 +147,11 @@ augroup END
 nmap <silent> gd <Plug>(coc-definition)
 " Add `:Format` command to format current buffer.
  command! -nargs=0 Format :call CocAction('format')
+
+"""""""""""""""""""""""""
+" Plugin rainbow        "
+"""""""""""""""""""""""""
+let g:rainbow_active = 1
 
 " Triger `autoread` when files changes on disk
 " "
