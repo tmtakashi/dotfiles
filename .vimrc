@@ -1,5 +1,5 @@
-set langmenu=en_US
-let $LANG = 'en_US'
+let $LANG = 'en'
+set langmenu=en_US.UTF-8
 set encoding=UTF-8
 set autoindent                          " Respect indentation when starting a new line.
 set expandtab                           " Expand tabs to spaces. Essential in Python.
