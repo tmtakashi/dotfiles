@@ -8,6 +8,7 @@ brew install jesseduffield/lazygit/lazygit
 
 brew tap homebrew/cask-fonts
 brew cask install font-hack-nerd-font
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # install vim-plug
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \

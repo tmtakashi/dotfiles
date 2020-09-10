@@ -1,3 +1,5 @@
+set langmenu=en_US
+let $LANG = 'en_US'
 set encoding=UTF-8
 set autoindent                          " Respect indentation when starting a new line.
 set expandtab                           " Expand tabs to spaces. Essential in Python.
@@ -85,6 +87,7 @@ nmap <C-e> :NERDTreeToggle<CR>
 if exists("g:loaded_webdevicons")
   call webdevicons#refresh()
 endif
+let g:webdevicons_conceal_nerdtree_brackets=1
 """""""""""""""""""""""""
 " Plugin fzf            "
 """""""""""""""""""""""""
@@ -151,6 +154,11 @@ nmap <silent> gd <Plug>(coc-definition)
 " Plugin rainbow        "
 """""""""""""""""""""""""
 let g:rainbow_active = 1
+let g:rainbow_conf = {
+\    'separately': {
+\        'nerdtree': 0,
+\    }
+\}
 
 " Triger `autoread` when files changes on disk
 " "
