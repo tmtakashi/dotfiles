@@ -7,28 +7,24 @@ $"
 
 KEYTIMEOUT=1
 
-# for neovim
-export XDG_CONFIG_HOME=$HOME/dotfiles
-export XDG_DATA_HOME=$HOME/dotfiles
-export GOPATH=$HOME
 export GO111MODULE=on
-export GOBIN=$GOPATH/bin
+export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
+
+export GHQ_ROOT=$HOME/src
+export GOPATH=$HOME
 export PATH=$PATH:$GOBIN
 export PATH="/usr/local/opt/llvm/bin:$PATH"
 
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-
-export PATH="$HOME/.rbenv/versions/2.0.0-p353/bin:$PATH"
-
-[[ -d ~/.rbenv  ]] && \
-  export PATH=${HOME}/.rbenv/bin:${PATH} && \
-  eval "$(rbenv init -)"
-export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
-alias vim=nvim
-alias vrc='vim ~/dotfiles/nvim/init.vim'
 alias zrc='vim ~/dotfiles/.zshrc'
 
-eval "$(starship init zsh)"
 export STARSHIP_CONFIG=~/dotfiles/.starship
+
+# Google Chrome
+alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
+
+# Shortcuts
+alias dl="cd ~/Downloads"
+alias dt="cd ~/Desktop"
+alias g="git"
+
+eval "$(starship init zsh)" # put this at the end
