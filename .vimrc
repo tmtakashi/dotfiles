@@ -56,7 +56,6 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 packloadall " Load all plugins
-silent helptags ALL
 
 
 """""""""""""""""""""""""
