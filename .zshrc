@@ -11,6 +11,7 @@ KEYTIMEOUT=1
 export XDG_CONFIG_HOME=$HOME/dotfiles
 export XDG_DATA_HOME=$HOME/dotfiles
 export GOPATH=$HOME
+export GO111MODULE=on
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOBIN
 export PATH="/usr/local/opt/llvm/bin:$PATH"
