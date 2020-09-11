@@ -26,5 +26,6 @@ alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias g="git"
+alias lg="lazygit"
 
 eval "$(starship init zsh)" # put this at the end
